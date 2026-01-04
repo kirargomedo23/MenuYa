@@ -1,25 +1,35 @@
-import { useState } from 'react' 
-import './App.css'
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+import './App.css';
+import CategoriesPage from './pages/categories/CategoriesPage';
+import ConfigurationPage from './pages/configuration/ConfigurationPage';
+import DashboardPage from './pages/dashboard/DashboardPage';
+import DishesPage from './pages/dishes/DishesPage';
+import LoginPage from './pages/login/LoginPage';
+import Sidebar from './shared/components/Sidebar';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+  };
+
+  if (!isAuthenticated) {
+    return <LoginPage onLogin={handleLogin} />;
+  }
 
   return (
-    <> 
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Sidebar />}>
+        <Route path="dashboard" element={<DashboardPage />} />
+        <Route path="categories" element={<CategoriesPage />} /> 
+        <Route path="dishes" element={<DishesPage />} />
+        <Route path="configuration" element={<ConfigurationPage />} />
+      </Route>
+    </Routes>
+  );
 }
 
-export default App
+export default App;

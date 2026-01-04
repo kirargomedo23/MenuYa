@@ -16,26 +16,6 @@ Menú-Ya es un backend diseñado para pequeños negocios que desean mostrar sus 
 - npm (v8 o superior)
 - NestJS CLI
 
-## Instalación
-
-1. Clona este repositorio:
-
-   ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   ```
-
-2. Navega al directorio del proyecto:
-
-   ```bash
-   cd menu-ya/back
-   ```
-
-3. Instala las dependencias:
-
-   ```bash
-   npm install
-   ```
-
 ## Uso
 
 1. Inicia el servidor de desarrollo:
@@ -53,5 +33,11 @@ Menú-Ya es un backend diseñado para pequeños negocios que desean mostrar sus 
 - `npm run lint`: Analiza el código para encontrar y corregir problemas de estilo.
 
 
+## Domain Driven Design en NestJS
 
+Application: Añadiremos los casos de uso y los transformers para devolver los datos a la salida estándar.
+
+Domain: Incluirá las entidades, eventos, listeners, excepciones, interfaces como repositorios y servicios y value objects
+
+Infrastructure: Contiene los controladores, listeners, parsers, implementación real de repositorios y servicios
 

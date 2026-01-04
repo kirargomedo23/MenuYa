@@ -1,0 +1,42 @@
+/* Estilos personalizados con variables CSS */
+
+.text-primary {
+  color: var(--color-primary-main);
+}
+
+.text-primary-light {
+  color: var(--color-primary-light);
+}
+
+.text-primary-dark {
+  color: var(--color-primary-dark);
+}
+
+.bg-primary {
+  background-color: var(--color-primary-main);
+}
+
+.bg-primary-dark {
+  background-color: var(--color-primary-dark);
+}
+
+.border-primary {
+  border-color: var(--color-primary-main);
+}
+
+.shadow-primary {
+  box-shadow: var(--shadow-primary);
+}
+
+/* Transiciones */
+.transition-fast {
+  transition-duration: var(--transition-fast);
+}
+
+.transition-base {
+  transition-duration: var(--transition-base);
+}
+
+.transition-slow {
+  transition-duration: var(--transition-slow);
+}
